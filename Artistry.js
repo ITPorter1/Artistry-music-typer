@@ -60,6 +60,8 @@ const names = [
         showWord(words);
         wordInput.value = '';
         score++;
+      }
+      scoreDisplay.innerHTML = score;
     }
 
   //Match currentWord to wordInput
@@ -72,7 +74,7 @@ const names = [
         return false;
     }
   }
-  }
+  
   
   // Pick & show random word
   function showWord(words){
@@ -98,5 +100,6 @@ const names = [
   function checkStatus(){
       if(!isPlaying && time === 0){
           message.innerHTML = 'Game Over';
+          score = 0;
       }
   }
