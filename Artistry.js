@@ -1,3 +1,5 @@
+window.addEventListener('load', init);
+
 // Globals
 let time = 5;
 let score = 0;
@@ -39,3 +41,15 @@ const names = [
     'Pusha T'
   ];
   
+  // Initialize Game
+  function init(){
+    showWord(words);
+  }
+
+  // Pick & show random word
+  function showWord(words){
+      //Generate random array index
+      const randIndex=Math.floor(Math.random() * words.length);
+      //Output random word
+      currentWord.innerHTML=words[randIndex];
+  }
