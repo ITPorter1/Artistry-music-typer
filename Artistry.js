@@ -1,7 +1,7 @@
 window.addEventListener('load', init);
 
 // Globals
-let time = 5;
+let time = 30;
 let score = 0;
  let isPlaying;
 
@@ -13,11 +13,11 @@ const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
-const names = [
+const words = [
     'Kendrick Lamar',
     'Chance The Rapper',
     'Jay Z',
-    'J.Cole',
+    'J Cole',
     'Drake',
     'Kanye West',
     'Lil Wayne',
@@ -27,7 +27,7 @@ const names = [
     'Westside Boogie',
     'Russ',
     'Stove God Cooks',
-    'Da Baby',
+    'DaBaby',
     '50 Cent',
     'JID',
     'Schoolboy Q',
@@ -39,6 +39,34 @@ const names = [
     'Biggie Smalls',
     'Royce Da 59',
     'Pusha T'
+  ];
+
+  const audio = [
+    'https://www.youtube.com/watch?v=T336EAeXukk',
+    'https://www.youtube.com/watch?v=xnO2HDmT1D8',
+    'https://www.youtube.com/watch?v=bh0SmO_YET4',
+    'https://www.youtube.com/watch?v=-Ww7spBP5dA',
+    'https://www.youtube.com/watch?v=HAfqdFNwlF0',
+    'https://www.youtube.com/watch?v=Q3TM75Pn-TQ',
+    'https://www.youtube.com/watch?v=KyNquY90-dc',
+    'https://www.youtube.com/watch?v=7TDoqOOuAIs',
+    'https://www.youtube.com/watch?v=kr1-_ybKoho',
+    'https://www.youtube.com/watch?v=fg1v0TpcZPs',
+    'https://www.youtube.com/watch?v=DH6PoiiXVBI',
+    'https://www.youtube.com/watch?v=O1PXiEy1nOQ',
+    'https://www.youtube.com/watch?v=RoDCwUe6nF4',
+    'https://www.youtube.com/watch?v=7Rxcsw4oXTY',
+    'https://www.youtube.com/watch?v=PhBqZicEMgQ',
+    'https://www.youtube.com/watch?v=ETWOmw04E6s',
+    'https://www.youtube.com/watch?v=KKrhWC_uJs0',
+    'https://www.youtube.com/watch?v=b24ovPwKjnE',
+    'https://www.youtube.com/watch?v=QlZYwiprCJg',
+    'https://www.youtube.com/watch?v=e7_lIq5ugn4',
+    'https://www.youtube.com/watch?v=W20t_5W-EHU',
+    'https://www.youtube.com/watch?v=Rxy9xBLlh1A',
+    'https://www.youtube.com/watch?v=mUEhQ48sCqU',
+    'https://www.youtube.com/watch?v=gembmYLKz5E',
+    'https://www.youtube.com/watch?v=3uymyKASA-Y'
   ];
   
   // Initialize Game
@@ -56,7 +84,7 @@ const names = [
   function startMatch(){
       if(matchWords()){
         isPlaying = true;
-        time = 6;
+        time = 31;
         showWord(words);
         wordInput.value = '';
         score++;
