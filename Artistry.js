@@ -1,4 +1,4 @@
-window.addEventListener('load', init);
+window.addEventListener('load', init, playVideo);
 
 // Globals
 let time = 30;
@@ -12,6 +12,7 @@ const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
+const vid = document.querySelector('#myVid'); 
 
 const words = [
     'Kendrick Lamar',
@@ -41,7 +42,7 @@ const words = [
     'Pusha T'
   ];
 
-  const audio = [
+  const videos = [
     'https://www.youtube.com/watch?v=T336EAeXukk',
     'https://www.youtube.com/watch?v=xnO2HDmT1D8',
     'https://www.youtube.com/watch?v=bh0SmO_YET4',
@@ -71,7 +72,9 @@ const words = [
   
   // Initialize Game
   function init(){
+    const randIndex=Math.floor(Math.random() * words.length);
     showWord(words);
+    playVideo(videos);
     //Start matching on word input
     wordInput.addEventListener('input',startMatch)
     // Call countdown every second
@@ -85,7 +88,9 @@ const words = [
       if(matchWords()){
         isPlaying = true;
         time = 31;
-        showWord(words);
+        const randIndex=Math.floor(Math.random() * words.length);
+        showWord(words, randIndex);
+        playVideo(videos, randIndex);
         wordInput.value = '';
         score++;
       }
@@ -105,11 +110,19 @@ const words = [
   
   
   // Pick & show random word
-  function showWord(words){
+  function showWord(words,randIndex){
       //Generate random array index
-      const randIndex=Math.floor(Math.random() * words.length);
+      // const randIndex=Math.floor(Math.random() * words.length);
       //Output random word
       currentWord.innerHTML=words[randIndex];
+  }
+
+  //Pick & play random link
+  function playVideo(videos,randIndex){
+      //Generate random array index
+      // const randIndex=Math.floor(Math.random() * words.length);
+      //Output random video
+      vid.src=videos[randIndex];
   }
 
   //Countdown timer
